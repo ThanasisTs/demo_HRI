@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="smooth" default="false"/>
+	<arg name="filter" default="false"/>
+	<arg name="cart_control" default="true"/>
+
+	<node name="trajectory_csv_example_node" type="trajectory_csv_example.py" pkg="demo_HRI" args="$(find demo_HRI)/csv/trajectory_example.csv" output="screen" respawn="false">
+	</node>
+
+	<include file="$(find movement_detection)/launch/movement_detection.launch">
+		<arg name="smooth" value="$(arg smooth)"/>
+		<arg name="filter" value="$(arg filter)"/>
+	</include>
+	
+	<include file="$(find trajectory_process_utils)/launch/static_point_filtering.launch" if="$(arg filter)">
+	</include>
+
+	<include file="$(find trajectory_process_utils)/launch/trajectory_smoothing.launch" if="$(arg smooth)">
+	</include>
+
+	<include file="$(find manos_gazebo)/launch/manos_gazebo.launch">
+		<arg name="cart_control" value="$(arg cart_control)"/>
+	</include>
+
+	<include file="$(find trajectory_execution_launch)/launch/trajectory_execution_launch.launch">
+	</include>
+
+</launch>	
