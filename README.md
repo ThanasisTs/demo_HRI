@@ -1,6 +1,4 @@
-# The ROS trajectory generation package
+# A Human Robot Interaction demo
 
-It includes a generic launch file for trajectory generation. It depends on the packages [movement_detection](https://github.com/thanasists/movement_detection)
-and [trajectory_point_process](https://github.com/thanasists/trajectory_point_process).
-
+This package combines the functionality of [movement_detection](https://github.com/ThanasisTs/movement_detection), [trajectory_process_utils](https://github.com/ThanasisTs/trajectory_process_utils), and [trajectory_execution_pkg](https://github.com/ThanasisTs/trajectory_execution_pkg) repos for a demonstration of our HRI framework. The initial trajectory is provided via a (csv)[https://github.com/ThanasisTs/demo_HRI/blob/master/csv/trajectory_example.csv] file.
 
