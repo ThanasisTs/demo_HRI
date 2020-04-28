@@ -23,6 +23,7 @@
 	</include>
 
 	<include file="$(find trajectory_execution_launch)/launch/trajectory_execution_launch.launch">
+		<arg name="control" value="$(arg cart_control)"/>
 	</include>
 
 </launch>	
