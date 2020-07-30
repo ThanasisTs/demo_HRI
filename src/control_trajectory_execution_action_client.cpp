@@ -9,6 +9,7 @@ void callback(trajectory_execution_msgs::PointArray waypoints){
 		waypoints.points[i].x += xOffset;
 		waypoints.points[i].y += yOffset;
 		waypoints.points[i].z += zOffset;
+		std::cout << waypoints.points[i] << std::endl;
 		control_points.points.push_back(waypoints.points[i]);
 	}
 	ROS_INFO("Points transformed");
