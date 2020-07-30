@@ -1,4 +1,4 @@
-dt: 0.047
+dt: 0.167
 init_gain: 1
-Dt: 6
-lim: 0.4
+Dt: 1
+sim: false

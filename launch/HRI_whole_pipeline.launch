@@ -3,9 +3,23 @@
 	<arg name="smooth" default="true"/>
 	<arg name="filter" default="true"/>
 	<arg name="cart_control" default="true"/>
+	<arg name="sim" default="false"/>
+	<arg name="live_camera" default="true"/>
+	<arg name="real_hw" default="false"/>
 
-	<node name="trajectory_csv_example_node" type="trajectory_csv_example.py" pkg="demo_HRI" args="$(find demo_HRI)/csv/trajectory_example.csv" output="screen" respawn="false">
-	</node>
+	<group unless="$(arg real_hw)">
+		<include file="$(find manos_gazebo)/launch/manos_gazebo.launch">
+			<arg name="cart_control" value="$(arg cart_control)"/>
+		</include>
+	</group>
+
+	<include file="$(find openpose_utils_launch)/launch/openpose_launch.launch">
+		<arg name="sim" default="$(arg sim)"/>
+		<arg name="live_camera" default="$(arg live_camera)"/>
+	</include>
+
+	<include file="$(find frame_transpose)/launch/frame_transpose.launch">
+	</include>
 
 	<include file="$(find movement_detection)/launch/movement_detection.launch">
 		<arg name="smooth" value="$(arg smooth)"/>
@@ -18,11 +32,7 @@
 	<include file="$(find trajectory_process_utils)/launch/trajectory_smoothing.launch" if="$(arg smooth)">
 	</include>
 
-	<include file="$(find manos_gazebo)/launch/manos_gazebo.launch">
-		<arg name="cart_control" value="$(arg cart_control)"/>
-	</include>
-
 	<include file="$(find trajectory_execution_launch)/launch/trajectory_execution_launch.launch">
 	</include>
 
-</launch>	
+</launch>
