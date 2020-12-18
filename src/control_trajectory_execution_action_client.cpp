@@ -2,7 +2,7 @@
 
 
 
-void callback(trajectory_execution_msgs::PointArray waypoints){
+void callback(trajectory_custom_msgs::PointArray waypoints){
 	ROS_INFO("Received the points");
 	for (int i=0; i<waypoints.points.size(); i++){
 		// insert code for the motion based on the current position

@@ -20,31 +20,28 @@
   <build_depend>movement_detection</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
-<!--   <build_depend>trajectory_process_utils</build_depend>
- -->  <build_depend>manos_gazebo</build_depend>
+  <build_depend>manos_gazebo</build_depend>
   <build_depend>control_trajectory_execution</build_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>trajectory_execution_msgs</build_depend>
+  <build_depend>trajectory_custom_msgs</build_depend>
   <build_depend>actionlib</build_depend>
 
   <build_export_depend>movement_detection</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
-<!--   <build_export_depend>trajectory_process_utils</build_export_depend>
- -->  <build_export_depend>manos_gazebo</build_export_depend>
+  <build_export_depend>manos_gazebo</build_export_depend>
   <build_export_depend>control_trajectory_execution</build_export_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
-  <build_export_depend>trajectory_execution_msgs</build_export_depend>
+  <build_export_depend>trajectory_custom_msgs</build_export_depend>
   <build_export_depend>actionlib</build_export_depend>
 
   <exec_depend>movement_detection</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
-<!--   <exec_depend>trajectory_process_utils</exec_depend>
- -->  <exec_depend>manos_gazebo</exec_depend>
+  <exec_depend>manos_gazebo</exec_depend>
   <exec_depend>control_trajectory_execution</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>trajectory_execution_msgs</exec_depend>
+  <exec_depend>trajectory_custom_msgs</exec_depend>
   <exec_depend>actionlib</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->

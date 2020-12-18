@@ -7,10 +7,9 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   geometry_msgs
-#   trajectory_process_utils
   manos_gazebo
   control_trajectory_execution
-  trajectory_execution_msgs
+  trajectory_custom_msgs
   actionlib
 )
 
