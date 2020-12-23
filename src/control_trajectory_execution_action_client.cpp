@@ -1,15 +1,13 @@
 #include "control_trajectory_execution_action_client.h"
 
 
-
-void callback(trajectory_custom_msgs::PointArray waypoints){
+void callback(trajectory_custom_msgs::PointStampedArray waypoints){
 	ROS_INFO("Received the points");
 	for (int i=0; i<waypoints.points.size(); i++){
-		// insert code for the motion based on the current position
-		waypoints.points[i].x += xOffset;
-		waypoints.points[i].y += yOffset;
-		waypoints.points[i].z += zOffset;
-		std::cout << waypoints.points[i] << std::endl;
+
+		waypoints.points[i].point.x += xOffset;
+		waypoints.points[i].point.y += yOffset;
+		waypoints.points[i].point.z += zOffset;
 		control_points.points.push_back(waypoints.points[i]);
 	}
 	ROS_INFO("Points transformed");
