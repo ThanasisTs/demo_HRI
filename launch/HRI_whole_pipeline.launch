@@ -6,13 +6,13 @@
 	<arg name="live_camera" default="true"/>
 	<arg name="cart_control" default="true"/>
 
-	<include file="$(find openpose_utils_launch)/launch/pipeline_launch.launch">
+	<include file="$(find pipeline_launch)/launch/pipeline_launch.launch">
 		<arg name="sim" default="$(arg sim)"/>
 		<arg name="live_camera" default="$(arg live_camera)"/>
 	</include>
 
 
-	<include file="$(find movement_detection)/launch/movement_detection.launch">
+	<include file="$(find offline_trajectory_process)/launch/movement_detection.launch">
 		<arg name="smooth" value="$(arg smooth)"/>
 		<arg name="filter" value="$(arg filter)"/>
 	</include>
